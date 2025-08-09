@@ -44,7 +44,7 @@ def get_gpt_reply(user_message):
         result = response.json()
         return result["choices"][0]["message"]["content"]
     else:
-        return "দুঃখিত, আমি এখন উত্তর দিতে পারছি না।"
+        return "Sorry for No Answer"
 
 def send_message(recipient_id, message_text):
     url = f"https://graph.facebook.com/v17.0/me/messages?access_token={PAGE_ACCESS_TOKEN}"
