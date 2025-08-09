@@ -8,12 +8,12 @@ PAGE_ACCESS_TOKEN = os.getenv("PAGE_ACCESS_TOKEN")
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-@app.route("/", methods=["GET"])
+@app.route('/', methods=['GET'])
 def verify():
-    token_sent = request.args.get("hub.verify_token")
+    token_sent = request.args.get('hub.verify_token')
     if token_sent == VERIFY_TOKEN:
-        return request.args.get("hub.challenge")
-    return "Invalid verification token"
+        return request.args.get('hub.challenge')
+    return 'Invalid verification token'
 
 @app.route("/", methods=["POST"])
 def webhook():
